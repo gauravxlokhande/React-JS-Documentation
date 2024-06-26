@@ -41,3 +41,45 @@ export function Header(props) {
     )
 }
 ```
+
+## To pass the children data from Paraent App.js
+
+### App.js
+```
+import "./App.css";
+import { Header } from "./Header/Header";
+import { Footer } from "./Footer/Footer";
+
+function App() {
+  let Userinfo = {
+    Name: "Gaurav Lokhande",
+    Phone: "9511767637",
+    Email: "gauravlokhande@gmail.com",
+  };
+
+  return (
+    <>
+      <Header name={"Gaurav"} UserInfo={Userinfo}>
+        <h1>All children data</h1>
+      </Header>
+
+      <Footer />
+    </>
+  );
+}
+
+export default App;
+
+```
+### Header.js
+```
+export function Header({ name, UserInfo, children }) {
+    console.log(UserInfo.Phone);
+
+    return (
+        <div>
+            <h1>Header {name} {UserInfo.Phone} {children}</h1>
+        </div>
+    )
+}
+```
