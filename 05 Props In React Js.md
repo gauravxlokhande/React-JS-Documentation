@@ -43,6 +43,7 @@ export function Header(props) {
 ```
 
 ## To pass the children data from Paraent App.js
+![image](https://github.com/gauravxlokhande/React-JS-Documentation/assets/119065314/63ec783e-6da4-48b5-9bf5-879ef7dc8cbb)
 
 ### App.js
 ```
