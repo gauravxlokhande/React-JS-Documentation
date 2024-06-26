@@ -1,6 +1,6 @@
 ## Run command in terminal:
 ```
-npm i bootstrap@5.3.3
+npm i bootstrap
 ```
 
 ## Inport in js:
