@@ -41,3 +41,29 @@ function App() {
 export default App;
 
 ```
+
+
+
+![image](https://github.com/gauravxlokhande/React-JS-Documentation/assets/119065314/df556ffd-fc94-4d09-8416-e9b4defe4f66)
+
+
+```
+import "./App.css";
+import { useState } from "react";
+import { userdata } from "./Data/data.jsx";
+
+function App() {
+  const [first, setfirst] = useState(userdata[0].pin);
+  console.log(first);
+  return (
+    <div>
+      {userdata.map((item, index) => {
+        return <h1 onClick={() => setfirst(item.name)}>{item.name}</h1>;
+      })}
+    </div>
+  );
+}
+
+export default App;
+
+```
