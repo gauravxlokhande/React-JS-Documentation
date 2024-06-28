@@ -73,3 +73,53 @@ export default App;
 }
 
 ```
+
+
+# Using Prop Drealling
+
+```
+import React, { useState } from 'react'
+import "./faq.css"
+
+
+export function FAQ({ userInfo }) {
+
+    const [Showtitle, setShowtitle] = useState(userInfo[0].ID);
+
+    let titleComponent = userInfo.map((Userinformation, index) => {
+
+        let userdata = {
+            Userinformation,
+            Showtitle,
+            setShowtitle
+        }
+
+        return (
+            <Description key={index} AllData={userdata} />
+        )
+    }
+    );
+
+
+    return (
+        <div>
+            <h1>What Is an FAQ Page?</h1>
+            {titleComponent}
+        </div>
+    )
+}
+
+function Description({ AllData }) {
+
+    let { Userinformation, Showtitle, setShowtitle } = AllData
+    return (
+        <div>
+            <div className='Component'>
+                <h1 onClick={() => setShowtitle(Userinformation.ID)} className='title'>{Userinformation.name}</h1>
+                <p className={Showtitle === Userinformation.ID ? 'description' : 'hidedescription'}>{Userinformation.Description}</p>
+            </div>
+        </div>
+    )
+}
+
+```
